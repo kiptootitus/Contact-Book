@@ -122,3 +122,16 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+from pymongo import MongoClient
+
+# # Replace <your-mongodb-uri> with your actual MongoDB URI
+# client = MongoClient("mongodb+srv://toshcode:Titus1@3@cluster0.je0rm.mongodb.net/")
+
+from urllib.parse import quote_plus
+username = "toshcode"
+password = "Titus1@3"
+
+
+client = MongoClient(f"mongodb+srv://{quote_plus(username)}:{quote_plus(password)}@cluster0.je0rm.mongodb.net/")
